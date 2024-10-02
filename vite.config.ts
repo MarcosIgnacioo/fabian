@@ -5,5 +5,5 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue()],
   // DESCOMENTAR ESTO CUANDO DEPLOY PORQUE EN LOCAL T HACE COSAS LOKITAS
-  // base: `/deploy`,
+  base: `/fabian`,
 })
