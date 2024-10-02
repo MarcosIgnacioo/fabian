@@ -33,9 +33,18 @@ async function getMoviesByKeyword(keyword: string) {
   console.log(json)
   movies.value = json.results
 
-  response = await fetch(`https://api.themoviedb.org/3/discover/tv?with_keyword=${keyword}`, requestOptions)
-  json = await response.json()
-  series.value = json.results
+
+  const seriesHeaders = new Headers();
+  seriesHeaders.append("Authorization", `Bearer ${API_KEY}`);
+
+  const seriesRequest: RequestInit = {
+    method: "GET",
+    headers: seriesHeaders,
+    redirect: "follow"
+  };
+  const seriesResponse = await fetch(`https://api.themoviedb.org/3/discover/tv?with_keywords=${keyword}`, seriesRequest)
+  const seriesJson = await seriesResponse.json()
+  series.value = seriesJson.results
   isLoading.value = false;
 }
 
