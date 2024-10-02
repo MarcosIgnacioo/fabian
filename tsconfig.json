@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "module": "ESNext",
+    "target": "ESNext",
+    "moduleResolution": "node",
+    "strict": false,
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@/": ["src/"]
+    },
+    "types": [
+      "vite/client" // o el tipo que estés usando
+    ]
+  },
+  "include": [
+    "src//*.ts",
+    "src//.d.ts",
+    "src/**/.tsx",
+    "src/*/.vue" // Asegúrate de incluir los archivos .vue
+  ]
+}
